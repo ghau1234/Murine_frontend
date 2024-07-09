@@ -1,0 +1,26 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    
+}
+.footer-body{
+    background-color:#f5e022d0 ;
+    height: 200px;
+}
+.footer h1{
+    font-family:"Honk", system-ui;
+    font-size:50px;
+    text-align: center;
+}
+.footer-body p{
+    font-family: sans-serif;
+    font-weight: bolder;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .footer-body{
+        height: 300px;
+    }
+
+}

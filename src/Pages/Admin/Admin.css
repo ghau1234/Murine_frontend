@@ -1,0 +1,76 @@
+.admin {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .update-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .update-button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Basic styles for the user list table */
+.userlist table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.userlist th,
+.userlist td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.userlist th {
+  background-color: #f2f2f2;
+}
+
+.headingBox {
+  background-color: #c5ca78; /* Initial background color */
+  padding: 20px;
+  transition: background-color 0.3s ease; /* Transition effect for background-color */
+  cursor: pointer; /* Optional: Change cursor to pointer on hover */
+  font-size: x-large;
+}
+
+.headingBox:hover {
+  background-color: #c0c0c0; /* Background color change on hover */
+}
+

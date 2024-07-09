@@ -1,0 +1,256 @@
+:root {
+    /* color */
+    --color0: hsl(229, 57%, 11%);
+    --color0Trans: hsl(229, 57%, 11%, 0.85);
+    --color1: hsl(228, 56%, 26%);
+    --color2: hsl(243, 100%, 93%);
+    --color3: hsl(229, 7%, 55%);
+    --color4: hsl(230, 55%, 18%);
+    --color5: hsl(0, 0%, 100%);
+    
+    /* gradient */
+    --gradient: linear-gradient(90deg, hsl(6, 100%, 80%) 0%, hsl(335, 100%, 65%) 100%);
+    
+    /* font size */
+    --fontSize: 14px;
+    
+    /* font weight */
+    --regularFont: 400;
+    --boldFont: 700;
+}
+@keyframes progressLineTransmission {
+    from {
+        width: 4%;
+    }
+
+    to {
+        width: 81.5%;
+    }
+}
+
+.progress_container {  
+    height: 150px;
+    display: flex;
+    
+}
+.section1 {
+    background-color: var(--color1);
+    height: 100%;
+    padding: 40px 130px 40px 40px;
+    border-radius: 8px 90px 8px 8px;
+
+    /* flex */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section1__buttons {
+    width: calc(45px * 3 + 15px * 2);
+
+    /* flex */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section1__button {
+    background-color: var(--color0);
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+
+    /* flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section1__button:hover {
+    background-color: var(--color0Trans);
+}
+
+.section1__button:active {
+    transform: scale(0.9);
+}
+.section2 {
+    min-width: 450px; 
+    padding: 30px;
+    position: relative;
+}
+
+.section2__text {
+    color: var(--color2);
+    font-size: 30px;
+}
+.section2__text--bold {
+    font-weight: var(--boldFont);
+}
+
+.section2__progressBarContainer {
+    margin-top: 15px;
+    position: relative;
+}
+
+.section2__progressBar {
+    background-color: var(--color4);
+    width: 100%;
+    height: 18px;
+    padding: 2px;
+    border-radius: 50px;
+
+    /* flex */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.section2__progressBarRect {
+    background-color: var(--gradient);
+   
+    height: 100%;
+    padding: 2px;
+    border-radius: inherit;
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  
+    background-color: aqua;
+    /* flex */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.section2__progressBarCircle {
+    background-color: var(--color5);
+    height: calc(14px - 4px);
+    width: calc(14px - 4px);
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.section2__text {
+    color: var(--color2);
+}
+
+.section2__text--bold {
+    font-weight: var(--boldFont);
+}
+
+.section2__progressBarPoint {
+    color: var(--color2);
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: var(--boldFont);
+    /* position: absolute; */
+}
+
+.section2__progressBarPoint--start {
+    left: 0;
+    color: black;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.section2__progressBarPoint--end {
+    right: 0;
+    font-size: 20px;
+    color: black;
+    font-family: sans-serif;
+}
+
+.section2__storageLeft {
+    background-color: var(--color5);
+    width: fit-content;
+    padding: 20px;
+    border-radius: 8px 8px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 30px;
+    transform: translateY(-70%);
+
+}
+.section2__storageLeft::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border: solid 20px;
+    border-color: transparent var(--color5) transparent transparent;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(50%);
+
+}
+
+.section2__storageLeftDigits {
+    color: var(--color0);
+    font-size: 32px;
+    font-weight: var(--boldFont);
+}
+
+.section2__storageLeftText {
+    color: var(--color3);
+    margin-left: 7px;
+    font-weight: var(--boldFont);
+    letter-spacing: 1px;
+}
+@media (max-width: 861px) {
+    @keyframes progressLineTransmission {
+        from {
+            width: 6%;
+        }
+    
+        to {
+            width: 81.5%;
+        }
+    }
+
+    .bodyBackground {
+        background-image: url(https://raw.githubusercontent.com/mohammadjarabah681/codepen-assets/main/pens/ExpzvRa/images/bg-mobile.png);
+    }
+
+    .progress_container {
+        width: auto;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section1 {
+        height: 185px;
+        padding: 35px 130px 35px 35px;
+    }
+
+    .section2 {
+        width: 100%;
+        min-width: unset;
+        padding: 30px 30px 70px 30px;
+        margin-top: 15px;
+    }
+
+    .section2__storageLeft {
+        padding: 20px;
+        border-radius: 8px;
+
+        /* position */
+        right: unset;
+        left: 50%;
+        top: unset;
+        bottom: 0;
+        transform: translate(-50%, 50%);
+    }
+    .section2__storageLeft::before {
+        content: none;
+    }
+}
+@media (max-width: 381px) {
+    .progress_container {
+        transform: scale(0.8);
+    }
+}
