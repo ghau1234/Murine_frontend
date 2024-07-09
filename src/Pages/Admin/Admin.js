@@ -11,6 +11,8 @@ const Admin = () => {
     const [storageUsed, setStorageUsed] = useState('');
     const [storageTotal, setStorageTotal] = useState('');
     const [users, setUsers] = useState([]);
+    const node_api = "https://murine-backend.onrender.com";
+    const node_api1 = "http://localhost:3001";
 
     useEffect(() => {
         fetchSettings();
@@ -20,7 +22,7 @@ const Admin = () => {
 
     const fetchSettings = async () => {
         try {
-            const response = await axios.get(`http://localhost:3001/admin/settings`);
+            const response = await axios.get(`${node_api}/admin/settings`);
             const settingsData = response.data;
 debugger;
             // Convert the timer to ISO 8601 date string if needed
@@ -38,7 +40,7 @@ debugger;
     };
     const fetchUsers = async () => {
         try {
-            const response = await axios.get(`http://localhost:3001/auth/admin/userslist`);
+            const response = await axios.get(`${node_api}/auth/admin/userslist`);
             setUsers(response.data);
         } catch (error) {
             console.error('Failed to fetch users:', error);
@@ -49,7 +51,7 @@ debugger;
 
     const handleSettingsSubmit = async () => {
         try {
-            const response = await axios.post(`http://localhost:3001/admin/settings`, {
+            const response = await axios.post(`${node_api}/admin/settings`, {
                 timer,
                 murinePrice,
                 murineHead,

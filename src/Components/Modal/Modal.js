@@ -8,6 +8,8 @@ const Modal = () => {
   const [uploadedFile, setUploadedFile] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const JSON_USER_INFO = JSON.parse(sessionStorage.getItem('login_info'));
+  const node_api = "https://murine-backend.onrender.com";
+  const node_api1 = "http://localhost:3001";
 
 
   useEffect(() => {
@@ -59,7 +61,7 @@ const Modal = () => {
       formData.append('userId', JSON.parse(sessionStorage.getItem('login_info')).user.userID);
 
       // Send the POST request with the formData
-      const response = await axios.post(`http://localhost:3001/files/upload`, formData, {
+      const response = await axios.post(`${node_api}/files/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data' // Set appropriate header
         }

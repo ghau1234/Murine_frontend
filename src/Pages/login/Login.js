@@ -7,11 +7,13 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const node_api = "https://murine-backend.onrender.com";
+  const node_api1 = "http://localhost:3001";
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:3001/auth/login`, {
+      const response = await axios.post(`${node_api}/auth/login`, {
         email,
         password
       });

@@ -13,6 +13,8 @@ const Register = () => {
   const [referralID, setReferralID] = useState('');
   const [coinCount, setCoinCount] = useState(0);
   const [ownReferralID, setOwnReferralID] = useState('');
+  const node_api = "https://murine-backend.onrender.com";
+  const node_api1 = "http://localhost:3001";
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -32,7 +34,7 @@ const Register = () => {
     };
 
     try {
-      const response = await axios.post(`http://localhost:3001/auth/register`, user);
+      const response = await axios.post(`${node_api}/auth/register`, user);
       alert('Registration successful');
       // Handle success, redirect to login page or clear the form
       if (response) {

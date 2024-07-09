@@ -13,6 +13,8 @@ function App() {
   const [murineHead, setMurineHead] = useState("");
   const [storageUsed, setStorageUsed]= useState(0);
   const [storageTotal, setStorageTotal]= useState(0);
+  const node_api = "https://murine-backend.onrender.com";
+  const node_api1 = "http://localhost:3001";
   useEffect(() => {
     // Fetch settings data when component mounts
     fetchSettings();
@@ -20,7 +22,7 @@ function App() {
 
 const fetchSettings = async () => {
     try {
-        const response = await axios.get(`http://localhost:3001/admin/settings`);
+        const response = await axios.get(`${node_api}/admin/settings`);
         const settingsData = response.data;
 
         // Update state with fetched settings
